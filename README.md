@@ -38,24 +38,10 @@ https://github.com/joseefrodriguesbr/vale-food-user-management
 
 ### ⚙️ Porta da API: 8081
 
-### ⚙️ Variáveis importantes em application.properties:
+### ⚙️ APIs para comunicação e cache:
 ```
-spring.application.name=vfr
-spring.profiles.active=test
-
-vale-food.auth.public.key=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxbXU19tFxq/ApYNsZTuaNa2zoCJ/XPive7eyrwKJVdKobopg1lpAO0jcIKZy+jtYVo2GIVAAvqeaAS4ipdTfifgmsfM7oIzII4Z+YaDCnrVrXo3yWbIbXB1a6kRYXgrwmp7ev3j/TmX2CPjcAM32kAhF//oRsHVCWrf4LPgCis+c2q41KZFsHCO/ze4VYBtL15jeIuwl9VdUrLz+19+FLLUUyI1S4Yig2rL78MFgnbbyMToJEMZ9dJuUBVVVPMaujtFwrPvG5kMRZ49elV0YDfUojnsf1rstMwPNCwwm1Sb30z+Kb6+RY/2DLZ27bghqa4cl/3Un2sREnWma76ZVNwIDAQAB
-vale-food.jwt.custom.issuer=dm111-2025
-
-
-vale-food.gae.project-id=dm111-vale-food
-vale-food.gae.users.topic-name=users
-vale-food.gae.users.subscription-name=users-subscription
-
 vale-food.promo.url=http://localhost:8083/valefood/restaurants
 vale-food.user.url=http://localhost:8080/valefood/restaurants
-
-server.port=8081
-
 ```
 
 ### ⚙️ Rotas:
