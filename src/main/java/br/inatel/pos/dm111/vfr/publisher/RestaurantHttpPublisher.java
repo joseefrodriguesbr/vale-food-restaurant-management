@@ -9,14 +9,17 @@ import br.inatel.pos.dm111.vfr.persistence.restaurant.Restaurant;
 
 @Profile("test")
 @Component
-public class UserHttpPublisher implements AppPublisher
+public class RestaurantHttpPublisher implements AppPublisher
 {
 	@Value("${vale-food.promo.url}")
 	private String promoUrl;
 
+	@Value("${vale-food.user.url}")
+	private String userUrl;
+
 	private final RestTemplate restTemplate;
 
-	public UserHttpPublisher(RestTemplate restTemplate)
+	public RestaurantHttpPublisher(RestTemplate restTemplate)
 	{
 		this.restTemplate = restTemplate;
 	}
@@ -26,6 +29,7 @@ public class UserHttpPublisher implements AppPublisher
 	{
 		var event = buildEvent(restaurant, Event.EventType.ADDED);
 		restTemplate.postForObject(promoUrl, event.event(), RestaurantEvent.class);
+		restTemplate.postForObject(userUrl, event.event(), RestaurantEvent.class);
 		return true;
 	}
 }

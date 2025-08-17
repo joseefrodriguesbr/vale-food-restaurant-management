@@ -1,19 +1,29 @@
 package br.inatel.pos.dm111.vfr.api.restaurant.controller;
 
-import br.inatel.pos.dm111.vfr.api.core.ApiException;
-import br.inatel.pos.dm111.vfr.api.core.AppError;
-import br.inatel.pos.dm111.vfr.api.restaurant.RestaurantRequest;
-import br.inatel.pos.dm111.vfr.api.restaurant.RestaurantResponse;
-import br.inatel.pos.dm111.vfr.api.restaurant.service.RestaurantService;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ValidationUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import br.inatel.pos.dm111.vfr.api.core.ApiException;
+import br.inatel.pos.dm111.vfr.api.core.AppError;
+import br.inatel.pos.dm111.vfr.api.promo.PromotionResponse;
+import br.inatel.pos.dm111.vfr.api.promo.service.PromotionService;
+import br.inatel.pos.dm111.vfr.api.restaurant.RestaurantRequest;
+import br.inatel.pos.dm111.vfr.api.restaurant.RestaurantResponse;
+import br.inatel.pos.dm111.vfr.api.restaurant.service.RestaurantService;
 
 @RestController
 @RequestMapping("/valefood/restaurants")
@@ -23,10 +33,12 @@ public class RestaurantController {
 
     private final RestaurantRequestValidator validator;
     private final RestaurantService service;
+    private final PromotionService promotionService;
 
-    public RestaurantController(RestaurantRequestValidator validator, RestaurantService service) {
+    public RestaurantController(RestaurantRequestValidator validator, RestaurantService service, PromotionService promotionService) {
         this.validator = validator;
         this.service = service;
+        this.promotionService = promotionService;
     }
 
     @GetMapping
@@ -89,6 +101,17 @@ public class RestaurantController {
         return ResponseEntity
                 .status(HttpStatus.NO_CONTENT)
                 .build();
+    }
+    
+    @GetMapping("{restaurantId}/promotions")
+    public ResponseEntity<List<PromotionResponse>> listRestaurantPromotions(@PathVariable("restaurantId") String restaurantId) throws ApiException {
+        log.info("Received request to list promotions for restaurant with id: {}", restaurantId);
+
+        var response = promotionService.listRestaurantPromotions(restaurantId);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(response);
     }
 
     private void validateRequest(RestaurantRequest request, BindingResult bindingResult)
