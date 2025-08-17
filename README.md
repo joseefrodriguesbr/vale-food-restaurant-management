@@ -85,11 +85,24 @@ As rotas abaixo estão dentro do prefixo /estoque, e requerem autenticação JWT
 * **Body esperado(exemplo):**
 ```
 {
-    "name": "ed",
-    "email": "ed@inatel.br",
-    "password": "admin",
-    "type": "RESTAURANT",
-    "preferredCategories":["Massas","Salgado"]
+    "name":"Restaurante Cozinha da Fazenda",
+    "address":"Rua P Vargas",
+    "userId":"abff943a-c356-47d5-ac2b-460a7f4ab956",
+    "categories":["Carnes, Bebidas"],
+    "products":[
+        {
+       "name":"File",
+       "description":"Descrição",
+       "category":"Carnes",
+       "price":25.45
+       },
+       {
+       "name":"Linguiça",
+       "description":"Descrição",
+       "category":"Carnes",
+       "price":5.45
+       }
+    ]
 }
 ```
 
@@ -149,47 +162,93 @@ As rotas abaixo estão dentro do prefixo /estoque, e requerem autenticação JWT
 ``` 
 
 🌐 **GET /valefood/restaurants**
-* **Descrição:** Lista todos os usuários cadastrados
+* **Descrição:** Lista todos os restaurantes cadastrados
 * **Body esperado(exemplo):**
 ```
 [
     {
-        "id": "e230565e-efe2-4efd-ac0a-26b9f1635744",
-        "name": "ed",
-        "email": "ed@inatel.br",
-        "type": "REGULAR",
-        "preferredCategories": [
-            "Massas",
-            "Salgados"
+        "id": "dc9d1385-902a-4986-90f4-071e5b2d6030",
+        "name": "Restaurante Cozinha da Fazenda",
+        "address": "Rua P Vargas",
+        "userId": "abff943a-c356-47d5-ac2b-460a7f4ab956",
+        "categories": [
+            "Carnes"
+        ],
+        "products": [
+            {
+                "id": "cdade893-facd-4b8d-af83-a05c01a734a2",
+                "name": "File",
+                "description": "Descrição",
+                "category": "Carnes",
+                "price": 8.45
+            },
+            {
+                "id": "b746f324-f975-4a62-984a-9e371620a82a",
+                "name": "Linguiça",
+                "description": "Descrição",
+                "category": "Carnes",
+                "price": 5.45
+            }
         ]
     },
     {
-        "id": "6fc24b41-cec3-4e6d-9df1-feb0619f1682",
-        "name": "ana",
-        "email": "ana@inatel.br",
-        "type": "RESTAURANT",
-        "preferredCategories": [
-            "Massas",
-            "Carnes"
+        "id": "b166a38b-5c7d-4fb4-995a-6151a046c90d",
+        "name": "Pizzaria",
+        "address": "Rua Central",
+        "userId": "abff943a-c356-47d5-ac2b-460a7f4ab956",
+        "categories": [
+            "Pizza",
+            "Massas"
+        ],
+        "products": [
+            {
+                "id": "fbd0d30c-1b2a-4284-8607-92aeae2e0109",
+                "name": "Pizza Mussarela",
+                "description": "Pizza Mussarela",
+                "category": "Pizza",
+                "price": 25.0
+            },
+            {
+                "id": "8244402e-6a76-420e-a5c7-823fedcab05a",
+                "name": "Macarronada",
+                "description": "Macarronada da casa",
+                "category": "Massas",
+                "price": 34.5
+            }
         ]
     }
 ]
 ```
 
-🌐 **GET /valefood/restaurants/:IdUser**  
+🌐 **GET /valefood/restaurants/:IdRestaurant**  
 * **Descrição:** Consulta uma usuário por Id.
 * * **Parâmetro de rota:**  
-  * **:IdPromocao** : Id do usuário a ser consultado
+  * **:IdRestaurant** : Id do restaurant a ser consultado
 * **Body esperado(exemplo):**
 ```
 {
-    "id": "e230565e-efe2-4efd-ac0a-26b9f1635744",
-    "name": "ed",
-    "email": "ed@inatel.br",
-    "type": "REGULAR",
-    "preferredCategories": [
-        "Massas",
-        "Salgados"
+    "id": "dc9d1385-902a-4986-90f4-071e5b2d6030",
+    "name": "Restaurante Cozinha da Fazenda",
+    "address": "Rua P Vargas",
+    "userId": "abff943a-c356-47d5-ac2b-460a7f4ab956",
+    "categories": [
+        "Carnes"
+    ],
+    "products": [
+        {
+            "id": "cdade893-facd-4b8d-af83-a05c01a734a2",
+            "name": "File",
+            "description": "Descrição",
+            "category": "Carnes",
+            "price": 8.45
+        },
+        {
+            "id": "b746f324-f975-4a62-984a-9e371620a82a",
+            "name": "Linguiça",
+            "description": "Descrição",
+            "category": "Carnes",
+            "price": 5.45
+        }
     ]
 }
 ```
