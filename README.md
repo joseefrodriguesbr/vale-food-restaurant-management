@@ -112,50 +112,37 @@ As rotas abaixo estão dentro do prefixo /estoque, e requerem autenticação JWT
   * **:IdPromocao** : Id do usuário a ser deletado
 
 
-🌐 **GET /valefood/restaurants/:IdUser/recommmendedpromotions**  
-* **Descrição:** Consulta promoções recomendadas para usuário informado.
+🌐 **GET /valefood/restaurants/52a2c945-11d0-40b9-85fd-739f537e02bd/promotions**  
+* **Descrição:** Consulta promoções cadastradas por um restaurante.
 * * **Parâmetro de rota:**  
-  * **:IdUser** : Id do usuário a filtrar promoções recomendadas de acordo com as preferências 
+  * **:IdUser** : Id do restaurante a consultar promoções
 * **Body esperado(exemplo):**
 ``` 
 [
     {
-        "id": "9bf8a0f6-ac52-422a-982d-55284f423d96",
+        "id": "e9203869-da78-4e09-8237-8c9bbc7aeb60",
         "name": "Descontos do Feriado",
         "description": "Descontos especiais em pratos selecionados para Feriado!",
-        "restaurantId": "Pizzaria",
-        "restaurantName": "cad9771d-29e6-4d8c-8dfb-bb678e32d088",
-        "product": {
-            "productId": "713980f5-2e6f-410a-a064-ea457b3da38e",
-            "promotionalPrice": 2.5,
-            "category": "Massas",
-            "productName": "Macarronada"
-        }
-    },
-    {
-        "id": "e04b71e9-343d-4140-828a-cbcf9cc5fde1",
-        "name": "Descontos do Final de semana",
-        "description": "Descontos especiais em pratos selecionados para Final de semana!",
-        "restaurantId": "Restaurante Cozinha da Fazenda",
-        "restaurantName": "52a2c945-11d0-40b9-85fd-739f537e02bd",
-        "product": {
-            "productId": "8974a7c6-7046-40ac-8690-17e4a087b969",
-            "promotionalPrice": 1.5,
-            "category": "Carnes",
-            "productName": "File"
-        }
-    },
-    {
-        "id": "2e2db2f4-2cf8-4944-9619-daefce02bbf6",
-        "name": "Descontos do Feriado",
-        "description": "Descontos especiais em pratos selecionados para Feriado!",
-        "restaurantId": "Restaurante Cozinha da Fazenda",
-        "restaurantName": "52a2c945-11d0-40b9-85fd-739f537e02bd",
+        "restaurantId": "52a2c945-11d0-40b9-85fd-739f537e02bd",
+        "restaurantName": "Restaurante Cozinha da Fazenda",
         "product": {
             "productId": "622fc20a-c7c4-4c3a-a266-9845481e69eb",
             "promotionalPrice": 2.5,
             "category": "Carnes",
             "productName": "Linguiça"
+        }
+    },
+    {
+        "id": "06bb002f-1f64-486d-a5e3-4e5f30b26983",
+        "name": "Descontos do Final de semana",
+        "description": "Descontos especiais em pratos selecionados para Final de semana!",
+        "restaurantId": "52a2c945-11d0-40b9-85fd-739f537e02bd",
+        "restaurantName": "Restaurante Cozinha da Fazenda",
+        "product": {
+            "productId": "8974a7c6-7046-40ac-8690-17e4a087b969",
+            "promotionalPrice": 1.5,
+            "category": "Carnes",
+            "productName": "File"
         }
     }
 ]
