@@ -14,7 +14,7 @@ jose.rodrigues@pg.inatel.br, jose.e.f.rodrigues.br@gmail.com
 Microserviço em Java/Spring Boot que expõe um CRUD (create, read, update e delete) para a entidade Restaurant.
 
 ### Requisitos atendidos:
-✅ **Serviço de Restaunt expondo API que exibe suas respectivas promoções**
+✅ **Serviço de Restaunt expondo API que exibe suas respectivas promoções (Novo Requisito)**
 
 ✅ CRUD (create, read, update e delete) para a entidade Promotion
 
