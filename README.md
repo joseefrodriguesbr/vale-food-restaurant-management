@@ -38,7 +38,7 @@ https://github.com/joseefrodriguesbr/vale-food-user-management
 
 ### ⚙️ Porta da API: 8081
 
-### ⚙️ APIs para comunicação e cache:
+### ⚙️ APIs para comunicação externa e cache:
 ```
 vale-food.promo.url=http://localhost:8083/valefood/restaurants
 vale-food.user.url=http://localhost:8080/valefood/restaurants
