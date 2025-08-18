@@ -113,7 +113,7 @@ As rotas abaixo requerem autenticação JWT.
 * **Descrição:** Consulta promoções cadastradas por um restaurante.
 * * **Parâmetro de rota:**  
   * **:IdUser** : Id do restaurante a consultar promoções
-* **Resposta esperado(exemplo):**
+* **Resposta esperada(exemplo):**
 ``` 
 [
     {
@@ -147,7 +147,7 @@ As rotas abaixo requerem autenticação JWT.
 
 🌐 **GET /valefood/restaurants**
 * **Descrição:** Lista todos os restaurantes cadastrados
-* **Resposta esperado(exemplo):**
+* **Resposta esperada(exemplo):**
 ```
 [
     {
@@ -208,7 +208,7 @@ As rotas abaixo requerem autenticação JWT.
 * **Descrição:** Consulta uma usuário por Id.
 * * **Parâmetro de rota:**  
   * **:IdRestaurant** : Id do restaurant a ser consultado
-* **Resposta esperado(exemplo):**
+* **Resposta esperada(exemplo):**
 ```
 {
     "id": "dc9d1385-902a-4986-90f4-071e5b2d6030",
