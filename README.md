@@ -109,10 +109,10 @@ As rotas abaixo requerem autenticação JWT.
   * **:IdRestaurant** : Id do restaurante a ser deletado
 
 
-🌐 **GET /valefood/restaurants/52a2c945-11d0-40b9-85fd-739f537e02bd/promotions**  
+🌐 **GET /valefood/restaurants/:IdRestaurant/promotions**  
 * **Descrição:** Consulta promoções cadastradas para um restaurante.
 * * **Parâmetro de rota:**  
-  * **:IdUser** : Id do restaurante a consultar promoções
+  * **::IdRestaurant** : Id do restaurante a consultar promoções
 * **Resposta esperada(exemplo):**
 ``` 
 [
