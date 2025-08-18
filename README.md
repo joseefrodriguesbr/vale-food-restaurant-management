@@ -46,8 +46,8 @@ vale-food.user.url=http://localhost:8080/valefood/restaurants
 
 ### ⚙️ Rotas:
 
-🔐 **Rotas protegidas** (com JWT via AuthController.verificaJWT):  
-As rotas abaixo estão dentro do prefixo /estoque, e requerem autenticação JWT.  
+🔐 **Rotas protegidas**:  
+As rotas abaixo requerem autenticação JWT.  
 
 🌐 **POST /valefood/restaurants**  
 * **Descrição:** Insere uma novo restaurante.  
