@@ -76,7 +76,7 @@ As rotas abaixo requerem autenticação JWT.
 ```
 
 🌐 **PUT /valefood/restaurants/:IdRestaurant**  
-* **Descrição:** Atualiza um usuário
+* **Descrição:** Atualiza um restaurante
 * * **Parâmetro de rota:**  
   * **:IdRestaurant** : Id do restaurante a ser atualizado
 * **Body esperado(exemplo):**
@@ -104,7 +104,7 @@ As rotas abaixo requerem autenticação JWT.
 ```
 
 🌐 **DELETE /valefood/restaurants/:IdRestaurant**  
-* **Descrição:** deleta um usuário.
+* **Descrição:** deleta um restaurante.
 * * **Parâmetro de rota:**  
   * **:IdRestaurant** : Id do restaurante a ser deletado
 
