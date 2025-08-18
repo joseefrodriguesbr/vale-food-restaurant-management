@@ -75,10 +75,10 @@ As rotas abaixo requerem autenticação JWT.
 }
 ```
 
-🌐 **PUT /valefood/restaurants/:IdUser**  
+🌐 **PUT /valefood/restaurants/:IdRestaurant**  
 * **Descrição:** Atualiza um usuário
 * * **Parâmetro de rota:**  
-  * **:IdPromocao** : Id do usuário a ser atualizado
+  * **:IdRestaurant** : Id do restaurante a ser atualizado
 * **Body esperado(exemplo):**
 ```
 {
@@ -103,10 +103,10 @@ As rotas abaixo requerem autenticação JWT.
 }
 ```
 
-🌐 **DELETE /valefood/restaurants/:IdUser**  
+🌐 **DELETE /valefood/restaurants/:IdRestaurant**  
 * **Descrição:** deleta um usuário.
 * * **Parâmetro de rota:**  
-  * **:IdPromocao** : Id do usuário a ser deletado
+  * **:IdRestaurant** : Id do restaurante a ser deletado
 
 
 🌐 **GET /valefood/restaurants/52a2c945-11d0-40b9-85fd-739f537e02bd/promotions**  
